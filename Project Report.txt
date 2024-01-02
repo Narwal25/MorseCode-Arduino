@@ -1,0 +1,37 @@
+Morse Code Project Report
+Project Overview
+The Morse Code Project, centered around Arduino development, was undertaken with the goal of creating a comprehensive system capable of encoding and decoding messages using BCCode, visually transmitting them through LEDs, and responding to specific commands. This multifaceted initiative comprised the development of robust encoding and decoding algorithms, precisely synchronized LED transmissions, and the incorporation of designated commands.
+
+Project Implementation
+Encoding and Decoding
+The encoding function was meticulously engineered to transform ASCII text into BCCode, adhering to a set of rules designed to ensure optimal representation. One notable aspect was the intentional absence of spaces between characters forming the same letter, providing a seamless and compact BCCode representation. Meanwhile, the tilde (~) symbol was strategically introduced to signify separation between characters constituting the same word. Additionally, a single space character acted as the delimiter between two distinct words.
+
+LED Transmission
+The visual representation of messages through LEDs was a critical component of the Morse Code Project. LED transmissions occurred seamlessly and promptly after serial transmissions. The system dynamically adjusted the LED transmission speed based on the analog input received from a potentiometer. This input was meticulously mapped to a time unit, ranging from a swift 20 milliseconds to a more leisurely 400 milliseconds, allowing for a flexible and user-controlled visual experience.
+
+Command Handling
+To elevate the project's functionality, four distinct commands were integrated:
+
+BxB Command: This command facilitated the transmission of the potentiometer value as BCCode. The system seamlessly converted the analog input into BCCode, providing a visual representation of the potentiometer value.
+
+PB Command: An intricate command that interpreted three decimal digits, determining the IR sensor input based on their sum. If the cumulative sum was less than 10, the system conveyed "HIGH" or "LOW" based on the input from the IR sensor. Conversely, if the sum was 10 or higher, the system relayed "UNKNOWN."
+
+BC Command: This command enabled the alteration of the brightness of the red LED. The three decimal digits following the BC command served as indicators for adjusting the brightness. However, if the brightness value exceeded 255, no changes were made.
+
+BB Command: A sophisticated command that orchestrated synchronous flashes of all LEDs based on specific time units. Each digit in the four-digit command was associated with a corresponding LED color (yellow, red, green, and orange). The system meticulously timed the flashes, providing a visually captivating representation.
+
+Addressing Challenges
+Spacing Complexity
+Managing spacing intricacies within BCCode, especially distinguishing between word endings and intra-word letter separations, presented a considerable challenge. To overcome this, a robust algorithm was crafted, ensuring precise spacing rules were adhered to during encoding and decoding processes.
+
+Precise Timing
+Achieving synchronized LED transmissions demanded meticulous timing calculations. The utilization of the millis() function facilitated precise control over LED on and off intervals, ensuring accurate and synchronized visual representations.
+
+Command Interpretation
+Interpreting commands required a keen focus on numerical inputs and the implementation of conditional logic. A dedicated function was devised to handle each command appropriately, ensuring accurate and responsive execution.
+
+Project Conclusion
+The Morse Code Project not only met its predefined objectives but also demonstrated a high level of proficiency in BCCode encoding, LED transmissions, and responsive command handling. Despite encountering challenges, the project stands as a testament to effective problem-solving and implementation.
+
+Self-Assessment
+In reflection, the Morse Code Project merits a rating of 95 out of 100. This assessment acknowledges the achieved milestones while allowing room for continuous improvement in future endeavors.
